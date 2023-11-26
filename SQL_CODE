@@ -1,0 +1,28 @@
+-- Identify the top 5 customers with the highest total sales. Include their contact information. -- 
+SELECT CUSTOMERNAME,PHONE, SUM(SALES) AS TotalSales FROM `auto sales data`
+GROUP BY CUSTOMERNAME,PHONE
+ORDER BY TotalSales DESC
+LIMIT 5; 
+-- List the top 3 most ordered products and their total quantity sold. -- 
+SELECT PRODUCTLINE, SUM(QUANTITYORDERED) AS TotalQuantitySold FROM `auto sales data`
+GROUP BY PRODUCTLINE
+ORDER BY TotalQuantitySold DESC
+LIMIT 3;
+-- Provide a breakdown of orders by status (Shipped, In Process, Cancelled, etc.) -- 
+SELECT `STATUS` FROM `auto sales data`
+GROUP BY `STATUS`;
+-- Calculate the average value of orders.-- 
+SELECT AVG(QUANTITYORDERED * PRICEEACH) AS AverageValueOfOrders FROM `auto sales data`;
+-- Identify the top 3 countries with the highest total sales. --
+SELECT COUNTRY, SUM(SALES) AS HighestTotalSales FROM `auto sales data`
+GROUP BY COUNTRY 
+ORDER BY HighestTotalSales DESC
+LIMIT 3;
+-- Determine the number of new customers acquired each month. -- 
+SELECT MONTH(ORDERDATE) AS Month,
+       COUNT(DISTINCT CUSTOMERNAME) AS NewCustomers
+FROM `auto sales data`
+GROUP BY MONTH(ORDERDATE);
+-- Analyze the distribution of order statuses. --
+SELECT STATUS, COUNT(*) AS OrderCount FROM `auto sales data`
+GROUP By STATUS;
