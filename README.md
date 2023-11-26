@@ -1,2 +1,1 @@
-# SQL_SalesAnalytics
-Sales Data Analysis with SQL: Customer insights, top sales, and order trends
+In this project, I delved into the intricate world of auto sales data, utilizing SQL queries to extract meaningful insights. The dataset is a treasure trove of information on orders, customers, products, and sales. My objective was to craft a comprehensive analysis, uncovering the nuances of customer behavior, deciphering product performance, and mapping out the broader trends in sales.
